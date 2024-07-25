@@ -1,0 +1,32 @@
+{
+  "name": "runeapes-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fontsource-variable/montserrat": "^5.0.19",
+    "@fontsource/montserrat": "^5.0.18",
+    "@gsap/react": "^2.1.1",
+    "gsap": "^3.12.5",
+    "lodash.throttle": "^4.1.1",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-aria-components": "^1.1.1",
+    "react-dom": "^18",
+    "react-multi-carousel": "^2.8.5"
+  },
+  "devDependencies": {
+    "@types/lodash.throttle": "^4.1.9",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "hellix";
+  src: url("/fonts/Hellix.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "hellix";
+  src: url("/fonts/Hellix-medium.otf");
+  font-weight: 500;
+}
+:root {
+  -webkit-font-smoothing: antialiased !important;
+  --card_primary: #000;
+  --stroke: #222222;
+  --disabled_background: #191919;
+  --disabled_foreground: #777;
+  --primary: #4bf05b;
+  --secondary: #fff;
+  --yellow: #ffdd55;
+  font-weight: 400;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "hellix";
+  background-color: #000;
+}
+
+.active {
+  color: var(--secondary);
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 0, 100;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 100, 0;
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dasharray: 0, 100;
+    stroke-dashoffset: 0;
+  }
+}

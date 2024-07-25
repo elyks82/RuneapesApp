@@ -1,0 +1,85 @@
+.upper_container {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.inner_thumbnail_container {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail_image {
+  border-radius: 40px;
+
+  position: absolute;
+  width: 900px;
+  height: 464px;
+}
+
+.etch_flicker {
+  border-radius: 40px;
+
+  transition: all 200ms ease; /* custom */
+  opacity: 0;
+  z-index: 20;
+  position: absolute;
+}
+
+.etch_flash_on {
+  border-radius: 40px;
+
+  transition: all 200ms ease; /* custom */
+
+  opacity: 1;
+}
+
+.etch_flash_off {
+  border-radius: 40px;
+
+  transition: all 200ms ease; /* custom */
+  opacity: 0;
+}
+
+.pool_fog {
+  animation: fog 3s infinite linear;
+  opacity: 0;
+  z-index: 20;
+  position: absolute;
+}
+
+.stone_bobbing {
+  animation: bobbingAnimation 5s ease-in-out infinite;
+  position: absolute;
+}
+
+@keyframes fog {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bobbingAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(
+      -20px
+    ); /* Adjust the pixel value to control the height of the bob */
+  }
+}

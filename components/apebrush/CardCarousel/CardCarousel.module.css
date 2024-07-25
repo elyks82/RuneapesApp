@@ -1,0 +1,213 @@
+.upper_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  gap: 10px;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+.mobile_upper_container {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.slider_container {
+  transition: 0.5s;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+
+.card {
+  -webkit-font-smoothing: subpixel-antialiased;
+  display: flex;
+  flex-direction: column;
+  transition: 0s;
+}
+
+.mobile_card {
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s ease-in-out;
+  position: relative;
+  width: 100%;
+  align-items: center;
+}
+
+.card_container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.leftCard {
+  z-index: 3;
+
+  pointer-events: none;
+
+  opacity: 0.2;
+}
+
+.centerCard {
+  filter: blur(0) !important;
+
+  z-index: 5;
+  opacity: 1;
+}
+
+.centerCard:hover .bobbing_animation {
+  animation: none; /* Adjust timing and repetition as needed bobbing 4s ease-in-out infinite;*/
+}
+
+.bobbing_animation_opposite {
+  animation: bobbing_opposite 3s ease-in-out infinite; /* Adjust timing and repetition as needed */
+}
+
+.rightCard {
+  z-index: 3;
+  pointer-events: none;
+
+  opacity: 0.2;
+}
+
+.hiddenCard {
+  z-index: 0;
+}
+
+.outer_cards_container {
+  height: 702px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.inner_cards_container {
+  transition: all 1000ms cubic-bezier(0, 0, 0, 1); /* custom */
+
+  transition-timing-function: cubic-bezier(0, 0, 0, 1); /* custom */
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 100%;
+  position: relative;
+}
+
+.carousel_buttons_container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.carousel_button {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+     Introduced in Internet Explorer 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 20px;
+  height: 40px;
+  z-index: 10;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  color: #fff;
+}
+
+.carousel_button_image {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(151deg)
+    brightness(103%) contrast(104%);
+}
+
+.carousel_button:active {
+  transform: scale(0.95);
+}
+
+.carousel_button:hover .carousel_button_image_left {
+  transition: 0.1s ease-out;
+  transform: translateX(-6px);
+  cursor: pointer;
+}
+
+.carousel_button:hover .carousel_button_image_right {
+  transition: 0.1s ease-out;
+  transform: translateX(6px);
+  cursor: pointer;
+}
+
+.card_shadow {
+  opacity: 0.4;
+  height: 40px;
+  border-radius: 100%;
+  transform: translateY(40px);
+  animation: shadow 5s ease-in-out infinite; /* Adjust timing and repetition as needed */
+  display: none;
+}
+.bobbing_animation_opposite + .card_shadow {
+  display: none;
+}
+
+@keyframes shadow {
+  0%,
+  100% {
+    opacity: 0.1;
+
+    transform: translateY(40px) scale(0.5); /* Starting and ending position */
+  }
+  50% {
+    opacity: 0.15;
+
+    transform: translateY(40px) scale(0.45); /* Highest point of the bob */
+  }
+}
+
+@keyframes bobbing_opposite {
+  0%,
+  100% {
+    transform: translateY(10px); /* Starting and ending position */
+  }
+  50% {
+    transform: translateY(-10px); /* Highest point of the bob */
+  }
+}
+
+@keyframes bobbing {
+  0%,
+  100% {
+    transform: translateY(-5px); /* Starting and ending position */
+  }
+  50% {
+    transform: translateY(5px); /* Highest point of the bob */
+  }
+}
+
+@media screen and (max-width: 1380px) {
+  .upper_container {
+    transform-style: flat !important;
+    perspective: 2000px !important;
+  }
+
+  .bobbing_animation {
+    animation: none !important;
+  }
+}

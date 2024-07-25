@@ -1,0 +1,44 @@
+.upper_container {
+  opacity: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.icon {
+  transform: scale(2.5);
+  opacity: 1;
+  animation: topAnimation 4s ease-in-out infinite;
+}
+
+.bottom_layer .icon {
+  opacity: 0.5;
+  animation: bottomAnimation 2s ease-in-out infinite;
+  transform: scale(2.5);
+}
+
+@keyframes bottomAnimation {
+  0%,
+  100% {
+    transform: translateY(0) scale(2.5);
+  }
+  50% {
+    transform: translateY(-20px) scale(2.5); /* Adjust the pixel value to control the height of the bob */
+  }
+}
+
+@keyframes topAnimation {
+  0%,
+  100% {
+    transform: translateY(20px) scale(2.5);
+  }
+  50% {
+    transform: translateY(0px) scale(2.5); /* Adjust the pixel value to control the height of the bob */
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .icon {
+    opacity: 0.2;
+  }
+}

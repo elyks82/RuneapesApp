@@ -1,0 +1,80 @@
+.mobileNav {
+  position: fixed;
+  z-index: 25;
+  height: 100vh;
+  background-color: var(--card_primary);
+  width: 100vw;
+  left: 0;
+  top: -105vh;
+  box-sizing: border-box;
+  transition: all 400ms cubic-bezier(0, 0, 0, 1); /* custom */
+}
+
+.mobileTop {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  align-items: center;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.button {
+  width: 100% !important;
+  max-width: 300px;
+}
+
+.button_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+}
+
+.join {
+  text-align: center;
+  font-size: 20px;
+}
+
+.icons {
+  display: grid;
+  place-items: center;
+}
+
+.mobileBars {
+  background-color: #000;
+  border-radius: 50px;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  right: calc(0% + 20px);
+}
+
+.mobileBars:hover {
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0, 0, 0, 1); /* custom */
+  background-color: var(--primary);
+  transform: scale(1.07);
+}
+
+.mobileBars:hover .bar_image {
+  transition: 0s;
+  filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7459%)
+    hue-rotate(193deg) brightness(106%) contrast(109%);
+}
+
+.mobileBars:active {
+  transform: scale(1);
+  transition: all 400ms cubic-bezier(0, 0, 0, 1); /* custom */
+}
